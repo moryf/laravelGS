@@ -12,8 +12,8 @@ class Proizvod extends Model
     protected $fillable = [
         'naziv',
         'cena',
-        'opis'
+        'opis',
     ];
-    
+
 
 }
