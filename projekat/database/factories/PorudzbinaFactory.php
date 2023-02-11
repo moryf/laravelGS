@@ -18,9 +18,8 @@ class PorudzbinaFactory extends Factory
     public function definition()
     {
         return [
-            'id_proizvoda'=>Proizvod::factory(),
-            'id_kupca'=>User::factory(),
-            
+            'proizvod_id'=>Proizvod::factory(),
+            'user_id'=>User::factory(),
         ];
     }
 }

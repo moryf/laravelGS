@@ -15,8 +15,8 @@ class CreatePorudzbinasTable extends Migration
     {
         Schema::create('porudzbinas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_proizvoda');
-            $table->foreignId('id_kupca');
+            $table->foreignId('user_id');
+            $table->foreignId('proizvod_id');
             $table->timestamps();
         });
     }

@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'prodavnica_id'=>$prodavnica1->id,
         ]);
         Porudzbina::factory(5)->create([
-           'id_proizvoda'=>$proizvod1->id, 
+           'proizvod_id'=>$proizvod1->id, 
         ]);
     }
 }

@@ -10,8 +10,8 @@ class Porudzbina extends Model
     use HasFactory;
 
     protected $fillable=[
-        'id_proizvoda',
-        'id_kupca',
+        'proizvod_id',
+        'user_id',
     ];
     
     public function proizvod(){
