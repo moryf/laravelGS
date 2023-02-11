@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ProizvodResource;
+use App\Http\Resources\ProizvodiResource;
 use App\Models\Proizvod;
 use Illuminate\Http\Request;
 
-class ProizvodController extends Controller
+class ProizvodiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ProizvodController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -47,8 +47,7 @@ class ProizvodController extends Controller
      */
     public function show(Proizvod $proizvod)
     {
-        //
-        return new ProizvodResource($proizvod);
+        return new ProizvodiResource($proizvod);
     }
 
     /**
