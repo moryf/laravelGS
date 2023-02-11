@@ -10,7 +10,14 @@ class Porudzbina extends Model
     use HasFactory;
 
     protected $fillable=[
-        'id_prodavnice',
+        'id_proizvoda',
         'id_kupca',
     ];
+    
+    public function proizvod(){
+        return $this->belongsTo(Proizvod::class);
+    }
+    public function kupac(){
+        return $this->belongsTo(User::class);
+    }
 }

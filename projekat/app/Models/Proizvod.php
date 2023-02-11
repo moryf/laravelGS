@@ -17,4 +17,11 @@ class Proizvod extends Model
     ];
 
 
+    public function prodavnica(){
+        return $this->belongsTo(Prodavnica::class);
+    }
+
+    public function porudzbine(){
+        return $this->hasMany(Porudzbina::class);
+    }
 }

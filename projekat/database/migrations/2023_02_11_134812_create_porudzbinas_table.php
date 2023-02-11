@@ -13,9 +13,9 @@ class CreatePorudzbinasTable extends Migration
      */
     public function up()
     {
-        Schema::create('porudzbine', function (Blueprint $table) {
+        Schema::create('porudzbinas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_prodavnice');
+            $table->foreignId('id_proizvoda');
             $table->foreignId('id_kupca');
             $table->timestamps();
         });

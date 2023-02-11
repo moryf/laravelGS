@@ -14,4 +14,8 @@ class Prodavnica extends Model
         'adresa',
         'brojTelefona'
     ];
+
+    public function proizvodi(){
+        return $this->hasMany(Proizvod::class);
+    }
 }

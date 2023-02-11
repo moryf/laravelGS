@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Porudzbina;
+use App\Models\Prodavnica;
+use App\Models\Proizvod;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +17,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        User::factory(10)->create();
+        Porudzbina::factory(10)->create();
+
+        $user=User::factory()->create();
+        $prodavnica1=Prodavnica::factory()->create();
+        $proizvod1=Proizvod::factory()->create([
+            'prodavnica_id'=>$prodavnica1->id,
+        ]);
+        $proizvod1=Proizvod::factory()->create([
+            'prodavnica_id'=>$prodavnica1->id,
+        ]);
+        Porudzbina::factory(5)->create([
+           'id_proizvoda'=>$proizvod1->id, 
+        ]);
     }
 }

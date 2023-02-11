@@ -23,6 +23,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function porudzbine(){
+        return $this->hasMany(Porudzbina::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
