@@ -12,8 +12,16 @@ class ProdavnicaResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
+
+    public static $wrap='prodavnice';
+
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+          'id'=>$this->resource->id,
+          'naziv'=>$this->resource->naziv,
+          'adresa'=>$this->resource->adresa,
+          'telefon'=>$this->resource->brojTelefona,  
+        ];
     }
 }

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ProizvodiResource;
-use App\Models\Proizvod;
+use App\Http\Resources\PorudzbinaResource;
+use App\Models\Porudzbina;
 use Illuminate\Http\Request;
 
-class ProizvodiController extends Controller
+class PorudzbinaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class ProizvodiController extends Controller
      */
     public function index()
     {
-        $proizvodi=Proizvod::all();
+        $porudzbine = Porudzbina::all();
 
-        return ProizvodiResource::collection($proizvodi);
+        return PorudzbinaResource::collection($porudzbine);
     }
 
     /**
@@ -44,35 +44,34 @@ class ProizvodiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Proizvod  $proizvod
+     * @param  \App\Models\Porudzbina  $porudzbina
      * @return \Illuminate\Http\Response
      */
-    public function show($proizvod_id)
+    public function show($porudzbina_id)
     {
-        $proizvod=Proizvod::find($proizvod_id);
-
-        return new ProizvodiResource($proizvod);
+        $p=Porudzbina::find($porudzbina_id);
+        return new PorudzbinaResource($p);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Proizvod  $proizvod
+     * @param  \App\Models\Porudzbina  $porudzbina
      * @return \Illuminate\Http\Response
      */
-    public function edit(Proizvod $proizvod)
+    public function edit(Porudzbina $porudzbina)
     {
-        
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Proizvod  $proizvod
+     * @param  \App\Models\Porudzbina  $porudzbina
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Proizvod $proizvod)
+    public function update(Request $request, Porudzbina $porudzbina)
     {
         //
     }
@@ -80,10 +79,10 @@ class ProizvodiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Proizvod  $proizvod
+     * @param  \App\Models\Porudzbina  $porudzbina
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Proizvod $proizvod)
+    public function destroy(Porudzbina $porudzbina)
     {
         //
     }

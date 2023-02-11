@@ -17,7 +17,7 @@ class Porudzbina extends Model
     public function proizvod(){
         return $this->belongsTo(Proizvod::class);
     }
-    public function kupac(){
+    public function user(){
         return $this->belongsTo(User::class);
     }
 }

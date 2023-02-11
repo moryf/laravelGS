@@ -17,7 +17,7 @@ class ProdavnicaController extends Controller
     {
         $prodavnice= Prodavnica::all();
 
-        return new ProdavnicaResource($prodavnice);
+        return ProdavnicaResource::collection($prodavnice);
     }
 
     /**
@@ -27,7 +27,7 @@ class ProdavnicaController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

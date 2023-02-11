@@ -2,9 +2,11 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Controllers\ProizvodiController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProizvodiResource extends JsonResource
+class PorudzbinaResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -12,17 +14,13 @@ class ProizvodiResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-
-    public static $wrap='proizvodi';
-    
+    public static $wrap='porudzbine';
     public function toArray($request)
     {
-        return[
+        return [
             'id'=>$this->resource->id,
-            'naziv'=>$this->resource->naziv,
-            'cena'=>$this->resource->cena,
-            'opis'=>$this->resource->opis,
-            'prodavnica'=>new ProdavnicaResource($this->resource->prodavnica),
+            'proizvod'=>new ProizvodiResource($this->resource->proizvod),
+            'kupac'=>new UserResource($this->resource->user),
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PorudzbinaController;
 use App\Http\Controllers\ProdavnicaController;
 use App\Http\Controllers\ProizvodiController;
 use App\Http\Controllers\UserController;
@@ -20,11 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/users',[UserController::class,'index']);
-Route::get('/users/{id}',[UserController::class,'show']);
-Route::get('/proizvodi',[ProizvodiController::class,'index']);
-Route::get('/proizvodi/{id}',[ProizvodiController::class,'show']);
+
+Route::resource('/proizvodi',ProizvodiController::class);
 
 Route::resource('/prodavnice',ProdavnicaController::class);
+
+Route::resource('/porudzbine',PorudzbinaController::class);
 
 
