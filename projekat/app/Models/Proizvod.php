@@ -13,6 +13,7 @@ class Proizvod extends Model
         'naziv',
         'cena',
         'opis',
+        'prodavnica_id',
     ];
 
 

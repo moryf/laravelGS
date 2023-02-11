@@ -13,7 +13,7 @@ class CreateProdavnicasTable extends Migration
      */
     public function up()
     {
-        Schema::create('prodavnice', function (Blueprint $table) {
+        Schema::create('prodavnicas', function (Blueprint $table) {
             $table->id();
             $table->string('naziv')->unique();
             $table->text('adresa');

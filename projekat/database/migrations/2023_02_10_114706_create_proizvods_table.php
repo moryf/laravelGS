@@ -18,6 +18,7 @@ class CreateProizvodsTable extends Migration
             $table->string('naziv');
             $table->integer('cena');
             $table->text('opis');
+            $table->foreignId('prodavnica_id');
             $table->timestamps();
         });
     }
