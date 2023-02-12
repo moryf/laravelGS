@@ -53,7 +53,7 @@ class PorudzbinaController extends Controller
             'proizvod_id'=>$request->proizvod_id,
         ]);
 
-        return response()->jsnon(['Post created successfully.', new PorudzbinaResource($porudzbine)]);
+        return response()->jsnon(['Uspesno!', new PorudzbinaResource($porudzbine)]);
     }
 
     /**
@@ -99,7 +99,7 @@ class PorudzbinaController extends Controller
             $porudzbina->proizvod_id=$request->proizvod_id;
             $porudzbina->save();
     
-            return response()->jsnon(['Post created successfully.', new PorudzbinaResource($porudzbina)]);
+            return response()->jsnon(['Uspesno!', new PorudzbinaResource($porudzbina)]);
     
     }
 
