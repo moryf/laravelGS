@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PorudzbinaResource;
 use App\Models\Porudzbina;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class PorudzbinaController extends Controller
@@ -38,7 +40,20 @@ class PorudzbinaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'proizvod_id'=>'required',
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors());
+        }
+
+        $porudzbine=Porudzbina::create([
+            'user_id'=>Auth::user()->id,
+            'proizvod_id'=>$request->proizvod_id,
+        ]);
+
+        return response()->jsnon(['Post created successfully.', new PorudzbinaResource($porudzbine)]);
     }
 
     /**
@@ -73,7 +88,19 @@ class PorudzbinaController extends Controller
      */
     public function update(Request $request, Porudzbina $porudzbina)
     {
-        //
+            $validator = Validator::make($request->all(),[
+                'proizvod_id'=>'required',
+            ]);
+    
+            if($validator->fails()){
+                return response()->json($validator->errors());
+            }
+    
+            $porudzbina->proizvod_id=$request->proizvod_id;
+            $porudzbina->save();
+    
+            return response()->jsnon(['Post created successfully.', new PorudzbinaResource($porudzbina)]);
+    
     }
 
     /**
@@ -84,6 +111,7 @@ class PorudzbinaController extends Controller
      */
     public function destroy(Porudzbina $porudzbina)
     {
-        //
+        $porudzbina->delete();
+        return response()->json('Obrisana porudzbina');
     }
 }
